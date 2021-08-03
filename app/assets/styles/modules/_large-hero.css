@@ -1,0 +1,64 @@
+.large-hero {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    &__image {
+        grid-column: 1;
+        grid-row: 1;
+        background-size: cover;
+        background-position: center;
+
+        img {
+            display: block;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+
+    &__text-content {
+        align-self: center;
+        grid-column: 1;
+        grid-row: 1;
+        padding-top: 100px;
+        text-align: left;
+        
+        @mixin atSmall {
+            padding-top: 10vh;
+        }
+    }
+
+    &__title {
+        font-size: calc(1.5rem + 1vw);
+        font-weight:600;
+        color: $titleWhite;
+        margin: 0;
+        line-height: 1.4em;
+        letter-spacing: 0.45em;
+        
+        @mixin atMedium {
+            font-size: calc(1.5rem + 2vw);
+        }
+
+        @mixin atLarge {
+            font-size: calc(1.5rem + 2.5vw);
+        }
+    }
+
+    &__subtitle {
+        font-size: 0.8rem;
+        margin: 0;
+        color: $titleWhite;
+        letter-spacing: 0.3em;
+        padding-bottom: 1rem;
+        font-weight: 600;
+
+        @mixin atLarge {
+            font-size: 1.1rem;
+            padding-left: 5px;
+        }  
+    }
+
+    & p {
+        padding-top: 1rem;
+    }
+}

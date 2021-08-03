@@ -1,0 +1,100 @@
+.testimonials {
+    
+    &__content {
+        display: grid;
+        margin: auto;
+        grid-gap: 2rem;
+        background-color: $testimonialBgColor;
+        padding: 2vh 0;
+
+        @mixin atSmall {
+            background-image: url("assets/images/testimonials/testimonial-bg.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 8vh 15vw;
+        }
+        
+        @mixin atMedium {
+            grid-template-columns: repeat(3, 1fr);
+            padding: 8vh 8vw;
+        }
+
+        @mixin atLarge {
+            padding: 15vh 15vw;
+        }
+        
+        
+        &--card {
+            background-color: white;
+            text-align: center;
+            box-shadow: 0 1px 3px rgb(0 0 0 / 8%);
+            box-sizing: border-box;
+            
+            &:hover {
+                transform: translateY(-0.5rem) scale(1);
+                transition: all .3s ease-in-out !important;
+                box-shadow: 12px 12px 15px rgb(0 0 0 / 3%),  -12px -12px 15px rgb(0 0 0 / 3%);
+            }
+            
+            &__top {
+                background-color: white;
+                padding: 0 0 53px 0;
+
+                &--title {
+                    color: $titleBlack;
+                    font-size: 1.2rem;
+                    margin: 28px 0 20px;
+                    text-transform: uppercase;
+                    letter-spacing: 5px;
+
+                    @mixin atSmall {
+                        font-size: 1rem;
+                    }
+                }
+
+                &--para {
+                    margin: 10px 0;
+                    padding: 0 32px;
+                    font-size: 14px;
+                    line-height: 26px;
+                    font-weight: 400;
+                    color: $paraBlack;
+                }
+            }
+
+            &__bot {
+                background-color: $cardFooter;
+                position: relative;
+                padding: 44px 10% 26px;
+
+                &--img {
+                    height: 70px;
+                    width: 70px;
+                    position: absolute;
+                    top: -35px;
+                    overflow: hidden;
+                    left: calc(50% - 35px);
+                    border-radius: 50%;
+
+                    &-1 {
+                        max-width: 100%;
+                        height: auto;
+                    }
+                }
+
+                &--title-1 {
+                    font-size: 0.9rem;
+                    text-transform: uppercase;
+                    letter-spacing: 0.2em;
+                }
+
+                &--title-2 {
+                    font-size: 0.8rem;
+                    text-transform: uppercase;
+                    color: red;
+                }
+            }
+        }
+    }
+}

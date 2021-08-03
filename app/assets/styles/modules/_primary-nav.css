@@ -1,0 +1,56 @@
+.primary-nav {
+    
+    ul {
+        margin: 0;
+        padding: 0;  
+    }
+
+    li {
+        text-transform: uppercase;
+        list-style: none;
+        
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        
+        
+        @mixin atMedium {
+            display: inline-block;
+            padding: 10px 10px;  
+        }
+
+        @mixin atLarge {
+            font-size: 0.85rem;
+        }
+    }
+
+    a {
+        display: block;
+        font-weight: 500;
+        font-family: "Montserrat", sans-serif;
+        color: $titleBlack;
+        padding: 12px 0;
+        border-bottom: 1px solid $paraGrey;
+        
+        @mixin atMedium {
+            font-weight: 900;
+            color: white;
+            padding-bottom: 0;
+            border-bottom: none;
+
+            a:hover {
+                color: $titleWhite;
+                transition: none;
+                transition: 0.1s;
+            }
+        }
+    }
+
+    a:hover {
+        color: $mainRed;
+        transition: 0.4s;
+
+        @mixin atMedium {
+            color: $titleWhite;
+        }
+    }
+}

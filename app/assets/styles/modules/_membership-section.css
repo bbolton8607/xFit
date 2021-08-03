@@ -1,0 +1,33 @@
+.membership {
+    background-color: $membershipBgColor;
+    padding: 13vh 0;
+    
+    &__content {
+        display: grid;
+        grid-row-gap: 0.5rem;
+        grid-column-gap: 3rem;
+    
+        @mixin atMedium {
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 5rem;
+            grid-row-gap: 5rem;
+        }
+
+        & p {
+            padding: 1rem 0;
+            line-height: 2em;
+            
+            @mixin atMedium {
+                padding: 1.5rem 0;
+            }            
+        }
+    }
+
+    &__image {
+        padding-top: 2rem;
+
+        @mixin atMedium {
+            padding-top: 1rem;
+        }
+    }
+}

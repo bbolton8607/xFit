@@ -1,0 +1,70 @@
+.section--header {
+    padding: 7vh 1vw;
+
+    &__light--bg {
+        background-color: white;
+    }
+
+    &__title{
+        font-size: calc(0.3rem + 2vw);
+        text-transform: uppercase; 
+        font-family: Montserrat, sans-serif;
+        letter-spacing: 8px;
+        color: $titleBlack;
+        text-align: center;
+        line-height: 0.2em;
+        white-space: nowrap;
+
+        &__left--align {
+            text-align: left;
+        }
+
+        &--light {
+            color: $titleWhite;
+        }
+
+        @mixin atSmall {
+            
+        }
+
+        @mixin atMedium {
+            font-size: calc(0.5rem + 2vw);
+        }
+    }
+    
+    &__subtitle {
+        font-size: calc(0.3rem + 1.3vw);
+        text-transform: uppercase; 
+        font-family: Montserrat, sans-serif;  
+        letter-spacing: 4px; 
+        color: $titleBlack;
+        text-align: center;
+        
+        &__left--align {
+            text-align: left;
+        }
+
+        &--light {
+            color: $titleWhite;
+        }
+
+        @mixin atSmall {
+            font-size: 1.2rem;
+        }
+
+        @mixin atLarge{
+            
+        }
+    }
+
+    &__para {
+        text-align: left;
+        line-height: 1.9em;
+        font-size: 0.9rem;
+        color: $paraGrey;
+    }
+
+    @mixin atLarge {
+        padding: 10vh 10vw;
+    }
+}

@@ -1,0 +1,57 @@
+.features {
+    display: grid;
+    padding: 11vh 13vw;
+    grid-row-gap: 2rem;
+    grid-column-gap: 2rem;
+
+    background-image: linear-gradient(
+        $bgOverlay,
+        $bgOverlay-2
+    ), url("assets/images/features/features-bg.jpg");
+
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @mixin atMedium {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto; 
+    }
+
+    @mixin atLarge {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+    }
+
+    &__content {
+        display: grid;
+
+        &--icon {
+            margin: auto;
+            transition: 0.5s ease-out, transform 0.4s ease-out;
+
+            &:hover {
+                transform: translateY(-1rem) scale(1);
+            }
+        }
+
+        &--title {
+            text-align: center;
+            margin: auto;
+            padding-top: 2rem;
+            color: $titleWhite;
+            font-size: 1.1rem;
+            letter-spacing: 0.2em;
+        }
+
+        &--para {
+            padding: 0 1rem;
+            font-size: 0.9rem;
+            color: white;
+            text-align: center;
+            font-weight: 400;
+            line-height: 1.7em;
+        }
+    }
+}

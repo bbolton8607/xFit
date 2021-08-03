@@ -1,0 +1,177 @@
+.site-header {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    transition: background-color .3s ease-out;
+    
+    &--white {
+        position: fixed;
+        background-color: $titleWhite !important;
+        height: 5.8rem;
+        box-shadow: 0 2px 2px $menuBoxShadow !important;
+
+        @mixin atMedium {
+
+            .site-header__menu-logo-white{ 
+                display: none;
+            }
+
+            .site-header__menu-logo-black {
+                display: block;
+                padding-top: .3rem;
+            }
+
+            .primary-nav ul li a {
+                color: $titleBlack;
+                
+                &.is-current-link {
+                    color: $mainRed;
+                }
+            }
+
+            .site-header__menu-cart-white {
+                display: none;
+            }
+
+            .site-header__menu-cart-black {
+                display: block;
+                padding-top: .3rem;
+            }
+
+            &.is-current-link {
+                color: $mainRed;
+            }
+        }   
+    }
+
+    &__small-screen {
+        background-color: $titleWhite;
+        box-shadow: 0 2px 2px $menuBoxShadow;
+
+        @mixin atMedium {
+            background-color: transparent;
+            box-shadow: none;
+        }  
+    }
+
+    &__menu-icon {
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        z-index: 10;
+        top: 35px;
+        right: 30px;
+
+        &--close-x {
+            &::before {
+              transform: rotate(45deg) scaleX(1) translateY(-1px);
+            }
+        
+            .site-header__menu-icon__middle {
+              opacity: 0;
+              transform: scaleX(0);
+            }
+        
+            &::after {
+              transform: rotate(-45deg) scaleX(1) translateY(1px);
+            }
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 3px;
+            background-color: $titleBlack;
+            transform-origin: 0 0;
+            transition: transform 0.3s ease-out;
+          }
+      
+          &__middle {
+            position: absolute;
+            top: 6px;
+            left: 0;
+            width: 20px;
+            height: 3px;
+            background-color:  $titleBlack;
+            transition: opacity 0.3s ease-out;
+            transform-origin: 0 50%;
+          }
+      
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 20px;
+            height: 3px;
+            background-color:  $titleBlack;
+            transform-origin: 0 100%;
+            transition: transform 0.3s ease-out;
+          }
+
+        @mixin atMedium {
+            display: none;
+        }
+    }
+
+    &__menu-content {
+        display: none;
+        
+        &--is-visible {
+            display: block;
+            opacity: 1; 
+            background-color: $titleWhite;
+            padding: 0 4vw 3vh 4vw;
+            box-shadow: 0 2px 2px $menuBoxShadow;
+        }
+
+        @mixin atMedium {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1900px;
+            padding: 2vh 3vw;
+        }
+    }
+
+    &__small-menu-logo-black {
+        padding: 1rem 0;
+        text-align: center;
+
+        @mixin atMedium {
+            display: none;
+        }
+    }
+
+    &__menu-logo-white {
+        height: 50px;
+        width: 50px;
+        display: none;
+
+        @mixin atMedium {
+            display: block;
+        }
+    }
+
+    &__menu-logo-black {
+        display: none;
+    }
+
+    &__menu-cart-white {
+        height: 50px;
+        width: 50px;
+        display: none;
+            
+        @mixin atMedium {
+            display: block;
+        }
+    }
+
+    &__menu-cart-black {
+        height: 50px;
+        width: 50px;
+        display: none;
+    }
+}

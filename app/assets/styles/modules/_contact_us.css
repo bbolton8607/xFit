@@ -1,0 +1,79 @@
+.contact {
+    background-image: linear-gradient(
+        $bgOverlay,
+        $bgOverlay-2
+    ), url("assets/images/contact_us/contact-bg.jpg");
+    
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    padding: 5vh 0;
+
+    &__content {
+
+        &--text__fields {
+            padding: 5vh 0 3vh 0;
+            
+            .text-input {
+                text-transform: capitalize;
+                background-color: rgba(255,255,255,.2);
+                border-radius: 5px;
+                padding: 20px 20px;
+                border: 1px solid transparent;
+                margin-bottom: 1rem;
+                width: 100%;   
+            }  
+        }
+
+        @mixin atMedium {
+
+            &--text__fields {
+                display: grid;
+                grid-template-areas:
+                'name email'
+                'home-number cell-number'
+                'message message';
+                grid-gap: 0 2rem;
+                padding: 3vh 10vw;
+                
+                .text-input {
+                    text-transform: capitalize;
+                    background-color: rgba(255,255,255,.2);
+                    border-radius: 5px;
+                    padding: 20px 20px;
+                    border: 1px solid transparent;  
+                }
+    
+                .name-input {
+                    grid-area: name;
+                }
+    
+                .email-input {
+                    grid-area: email;
+                }
+    
+                .home-number-input {
+                    grid-area: home-number;
+                }
+                
+                .cell-number-input {
+                    grid-area: cell-number;
+                }
+    
+                .message-input {
+                    grid-area: message;
+                    height: 9rem;
+                }
+            }
+        }
+
+        @mixin atLarge {
+            
+            &--text__fields {
+                padding: 5vh 15vw;   
+            }
+        }     
+    }
+}
